@@ -269,12 +269,12 @@ services:
         - COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME:-mailcow-dockerized}
         - FLATCURVE_EXPERIMENTAL=${FLATCURVE_EXPERIMENTAL:-n}
       ports:
-        - "${DOVEADM_PORT:-127.0.0.1:19992}:12346"
-        - "${IMAP_PORT:-143}:143"
-        - "${IMAPS_PORT:-993}:993"
-        - "${POP_PORT:-110}:110"
-        - "${POPS_PORT:-995}:995"
-        - "${SIEVE_PORT:-4190}:4190"
+        - "${DOVEADM_PORT:-127.0.0.1:19992}:12345"
+        - "${IMAP_PORT:-144}:143"
+        - "${IMAPS_PORT:-994}:993"
+        - "${POP_PORT:-111}:110"
+        - "${POPS_PORT:-996}:995"
+        - "${SIEVE_PORT:-4191}:4190"
       restart: always
       tty: true
       labels:
