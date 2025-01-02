@@ -35,7 +35,7 @@ services:
         - MYSQL_INITDB_SKIP_TZINFO=1
       restart: always
       ports:
-        - "${SQL_PORT:-127.0.0.1:13306}:3307"
+        - "${SQL_PORT:-127.0.0.1:13306}:3306"
       networks:
         mailcow-network:
           aliases:
@@ -49,7 +49,7 @@ services:
       depends_on:
         - netfilter-mailcow
       ports:
-        - "${REDIS_PORT:-127.0.0.1:7654}:6380"
+        - "${REDIS_PORT:-127.0.0.1:7654}:6379"
       environment:
         - TZ=${TZ}
       sysctls:
@@ -563,7 +563,7 @@ services:
       volumes:
         - solr-vol-1:/opt/solr/server/solr/dovecot-fts/data
       ports:
-        - "${SOLR_PORT:-127.0.0.1:18983}:8984"
+        - "${SOLR_PORT:-127.0.0.1:18983}:8983"
       environment:
         - TZ=${TZ}
         - SOLR_HEAP=${SOLR_HEAP:-1024}
